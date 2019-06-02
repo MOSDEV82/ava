@@ -1,6 +1,3 @@
-// Check if Text -> Speech is supported on the browser.
-if (!window || !Window || !document || window && !window.speechSynthesis) throw new Error("SpeechSynthesis is not supported in your Browser!");
-
 /**
  * A class to work with [`window.speechSynthesis`](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis).
  */

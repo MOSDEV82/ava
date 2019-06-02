@@ -1,12 +1,6 @@
-// Check if Speech -> Text is supported on the browser.
-if (!window || !Window || !document) throw new Error("SpeechRecognition is not supported in your Browser!");
-
 // Dependencies
 import { EventEmitter } from "events";
 import SpeechRecognition from "./SpeechRecognition";
-
-// Check if Speech -> Text is supported on the browser.
-if (!SpeechRecognition) throw new Error("SpeechRecognition is not supported in your Browser!");
 
 /**
  * Turn speech into text.

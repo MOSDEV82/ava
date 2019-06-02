@@ -1,7 +1,7 @@
 {
   "name": "aiava",
   "version": "1.0.0",
-  "description": "Turn speech into text.",
+  "description": "Just the tools you need to create artificial intelligence.",
   "main": "build/index.js",
   "scripts": {
     "build": "parcel src/index.ts -d build/ -t browser",

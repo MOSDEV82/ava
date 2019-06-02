@@ -1,6 +1,6 @@
 # ava
 
-> Just the tools you need to create artificial inteligence.
+> Just the tools you need to create artificial intelligence.
 
 **Table of Contents**
 - [ava](#ava)

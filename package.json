@@ -3,16 +3,16 @@
   "version": "1.0.3",
   "description": "Just the tools you need to create artificial intelligence.",
   "main": "build/index.js",
-  "typings": "src/",
+  "typings": "typings/",
   "scripts": {
-    "build": "parcel src/index.ts -d build/ -t browser",
+    "build": "tsc",
     "doc": "typedoc src/"
   },
   "repository": "https://github.com/aiava/ava",
   "author": "The Team Coders <ihack@theteamcoders.com>",
   "license": "MIT",
   "devDependencies": {
-    "parcel-bundler": "^1.12.3",
-    "typedoc": "^0.14.2"
+    "typedoc": "^0.14.2",
+    "typescript": "^3.5.1"
   }
 }

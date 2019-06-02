@@ -44,7 +44,7 @@ export default class TextToSpeech
 		utterance.pitch = this.pitch;
 		utterance.rate = this.rate;
 		utterance.volume = this.volume;
-		utterance.voice = (window.speechSynthesis.getVoices().find(voice => voice.name === "Samantha" && voice.lang === this.language) || window.speechSynthesis.getVoices().find(voice => voice.lang === this.language)) || null;
+		utterance.voice = (window.speechSynthesis.getVoices().find(voice => voice.name === "Samantha" && voice.lang === this.language) || window.speechSynthesis.getVoices().find(voice => voice.lang === this.language)) || ((null as any) as SpeechSynthesisVoice);
 		if (typeof cb === "function") cb(utterance);
 		this.speaker.speak(utterance);
 	}

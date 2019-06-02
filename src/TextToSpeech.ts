@@ -25,6 +25,7 @@ export default class TextToSpeech
 	 */
 	public constructor (options: { language?: string, pitch?: number, rate?: number, volume?: number })
 	{
+		if (typeof options !== "object") return;
 		if (typeof options.language === "string") this.language = options.language;
 		if (typeof options.pitch === "number") this.pitch = options.pitch;
 		if (typeof options.rate === "number") this.rate = options.rate;

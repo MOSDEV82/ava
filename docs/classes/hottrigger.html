@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TextToSpeech | aiava</title>
+	<title>HotTrigger | aiava</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="texttospeech.html">TextToSpeech</a>
+					<a href="hottrigger.html">HotTrigger</a>
 				</li>
 			</ul>
-			<h1>Class TextToSpeech</h1>
+			<h1>Class HotTrigger</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>A class to work with <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis"><code>window.speechSynthesis</code></a>.</p>
+						<p>A hot trigger allows you to test whether a string includes a trigger phrase, and eliminate it out of the string.</p>
 					</div>
 				</div>
 			</section>
@@ -77,7 +77,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">TextToSpeech</span>
+						<span class="target">HotTrigger</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<a href="phrase.html" class="tsd-signature-type">Phrase</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -88,23 +93,20 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="texttospeech.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="hottrigger.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="texttospeech.html#language" class="tsd-kind-icon">language</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="texttospeech.html#pitch" class="tsd-kind-icon">pitch</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="texttospeech.html#rate" class="tsd-kind-icon">rate</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="texttospeech.html#speaker" class="tsd-kind-icon">speaker</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="texttospeech.html#volume" class="tsd-kind-icon">volume</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="hottrigger.html#trigger" class="tsd-kind-icon">trigger</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="texttospeech.html#say" class="tsd-kind-icon">say</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hottrigger.html#test" class="tsd-kind-icon">test</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="hottrigger.html#trim" class="tsd-kind-icon">trim</a></li>
 							</ul>
 						</section>
 					</div>
@@ -116,46 +118,32 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Text<wbr>ToSpeech<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="texttospeech.html" class="tsd-signature-type">TextToSpeech</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Hot<wbr>Trigger<span class="tsd-signature-symbol">(</span>trigger<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="hottrigger.html" class="tsd-signature-type">HotTrigger</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aiava/ava/blob/88e4ae2/src/TextToSpeech.ts#L20">TextToSpeech.ts:20</a></li>
+									<li>Defined in HotTrigger.ts:8</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Initiate the text to speech object.</p>
+									<p>Create a new hot trigger.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>options: <span class="tsd-signature-type">object</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> trigger: <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> =&nbsp;/^(((Hi|Hello|Hey|Howdy) Ava)|Ava)/gi</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<div class="lead">
-											<p>The options to apply to new <a href="https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance"><code>SpeechSynthesisUtterance</code>(s)</a>.</p>
+											<p>The hot trigger.</p>
 										</div>
 									</div>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5><span class="tsd-flag ts-flagOptional">Optional</span> language<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5><span class="tsd-flag ts-flagOptional">Optional</span> pitch<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5><span class="tsd-flag ts-flagOptional">Optional</span> rate<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
-										</li>
-										<li class="tsd-parameter">
-											<h5><span class="tsd-flag ts-flagOptional">Optional</span> volume<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
-										</li>
-									</ul>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="texttospeech.html" class="tsd-signature-type">TextToSpeech</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="hottrigger.html" class="tsd-signature-type">HotTrigger</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -163,77 +151,17 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="language" class="tsd-anchor"></a>
-					<h3>language</h3>
-					<div class="tsd-signature tsd-kind-icon">language<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;en-US&quot;</span></div>
+					<a name="trigger" class="tsd-anchor"></a>
+					<h3>trigger</h3>
+					<div class="tsd-signature tsd-kind-icon">trigger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/aiava/ava/blob/88e4ae2/src/TextToSpeech.ts#L11">TextToSpeech.ts:11</a></li>
+							<li>Defined in HotTrigger.ts:8</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The language to speak in.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="pitch" class="tsd-anchor"></a>
-					<h3>pitch</h3>
-					<div class="tsd-signature tsd-kind-icon">pitch<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/aiava/ava/blob/88e4ae2/src/TextToSpeech.ts#L14">TextToSpeech.ts:14</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The pitch to use when speaking.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="rate" class="tsd-anchor"></a>
-					<h3>rate</h3>
-					<div class="tsd-signature tsd-kind-icon">rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/aiava/ava/blob/88e4ae2/src/TextToSpeech.ts#L17">TextToSpeech.ts:17</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The rate to use when speaking.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="speaker" class="tsd-anchor"></a>
-					<h3>speaker</h3>
-					<div class="tsd-signature tsd-kind-icon">speaker<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">SpeechSynthesis</span><span class="tsd-signature-symbol"> =&nbsp;window.speechSynthesis</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/aiava/ava/blob/88e4ae2/src/TextToSpeech.ts#L8">TextToSpeech.ts:8</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The syntesis object.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="volume" class="tsd-anchor"></a>
-					<h3>volume</h3>
-					<div class="tsd-signature tsd-kind-icon">volume<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/aiava/ava/blob/88e4ae2/src/TextToSpeech.ts#L20">TextToSpeech.ts:20</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The volume to speak in.</p>
+							<p>The hot trigger regular expression.</p>
 						</div>
 					</div>
 				</section>
@@ -241,21 +169,21 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="say" class="tsd-anchor"></a>
-					<h3>say</h3>
+					<a name="test" class="tsd-anchor"></a>
+					<h3>test</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">say<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, cb<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">test<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/aiava/ava/blob/88e4ae2/src/TextToSpeech.ts#L40">TextToSpeech.ts:40</a></li>
+									<li>Defined in HotTrigger.ts:23</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Say something.</p>
+									<p>Check if a text contains the correct phrase.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -263,17 +191,42 @@
 								<li>
 									<h5>text: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The text to speak.</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> cb: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>A function used to override utterance options and to attach events to this specific message.</p>
+										<p>The text to check.</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="trim" class="tsd-anchor"></a>
+					<h3>trim</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">trim<span class="tsd-signature-symbol">(</span>text<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in HotTrigger.ts:29</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Eliminate the phrase out of the text.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>text: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The text to trim.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -289,45 +242,36 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
 						<a href="hottrigger.html" class="tsd-kind-icon">Hot<wbr>Trigger</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="hottrigger.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="hottrigger.html#trigger" class="tsd-kind-icon">trigger</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="hottrigger.html#test" class="tsd-kind-icon">test</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="hottrigger.html#trim" class="tsd-kind-icon">trim</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-class">
 						<a href="phrase.html" class="tsd-kind-icon">Phrase</a>
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="speechtotext.html" class="tsd-kind-icon">Speech<wbr>ToText</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class">
+					<li class=" tsd-kind-class">
 						<a href="texttospeech.html" class="tsd-kind-icon">Text<wbr>ToSpeech</a>
-						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="texttospeech.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="texttospeech.html#language" class="tsd-kind-icon">language</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="texttospeech.html#pitch" class="tsd-kind-icon">pitch</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="texttospeech.html#rate" class="tsd-kind-icon">rate</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="texttospeech.html#speaker" class="tsd-kind-icon">speaker</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="texttospeech.html#volume" class="tsd-kind-icon">volume</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="texttospeech.html#say" class="tsd-kind-icon">say</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-variable">
 						<a href="../globals.html#speechrecognition" class="tsd-kind-icon">Speech<wbr>Recognition</a>
 					</li>

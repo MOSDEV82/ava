@@ -1,8 +1,9 @@
 {
   "name": "aiava",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Just the tools you need to create artificial intelligence.",
   "main": "build/index.js",
+  "typings": "src/",
   "scripts": {
     "build": "parcel src/index.ts -d build/ -t browser",
     "doc": "typedoc src/"

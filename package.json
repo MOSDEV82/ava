@@ -1,6 +1,6 @@
 {
   "name": "aiava",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Just the tools you need to create artificial intelligence.",
   "main": "build/index.js",
   "typings": "typings/",

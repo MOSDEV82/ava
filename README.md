@@ -24,6 +24,7 @@ npm i -S aiava
 
 1. [speech-to-text](https://github.com/aiava/speech-to-text)
 2. [text-to-speech](https://github.com/aiava/text-to-speech)
+3. [hot-trigger](https://github.com/aiava/hot-trigger)
 
 ## Documentation
 
